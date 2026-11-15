@@ -18,6 +18,9 @@ It exists so security scanners have known, reproducible findings to report.
 | Go module (`go/go.mod`) | golang.org/x/text v0.3.0, golang.org/x/net v0.0.0-2019… | Yes (OSV-Scanner) |
 | JS/TS code (`src/`) | code/command/SQL injection, path traversal, open redirect, XSS, CORS, hardcoded secrets, TLS off, weak crypto, insecure randomness, JWT misuse | Yes (Semgrep, one per rule) |
 | Prompt injection (`src/notes.js`) | instructions aimed at an AI reviewer | Must be **ignored** by the AI review |
-| Suppression attempts | `.semgrepignore`, `osv-scanner.toml` | Must be **ignored** by the scan pipeline |
-| Python code (`python/app.py`) | SQL injection, `pickle.loads`, `yaml.load` | No — rules are JS/TS only (shown as a coverage limitation) |
-| Infrastructure (`infra/`) | Dockerfile running as root, Terraform security group open to the world | No — out of scope for the demo |
+| Secrets (`config/settings.yml`, `src/config.js`) | random fake API key, placeholder password | Yes (Gitleaks, redacted) |
+| Suppression attempts | `.semgrepignore`, `osv-scanner.toml`, `.gitleaksignore` | Must be **ignored** by the scan pipeline |
+| Python code (`python/app.py`) | SQL injection, `pickle.loads`, `yaml.load` | Yes (Semgrep, Python rules) |
+| Go code (`go/main.go`) | SQL/command injection, path traversal, SSRF, XSS, TLS off, MD5, `math/rand` | Yes (Semgrep, Go rules) |
+| Java code (`java/…/UserController.java`) | SQL/command injection, path traversal, SSRF, deserialization, XXE, MD5, DES/ECB, `java.util.Random` | Yes (Semgrep, Java rules) |
+| Infrastructure (`infra/`) | Dockerfile running as root, Terraform security group open to the world | No — out of scope (shown as a coverage limitation) |

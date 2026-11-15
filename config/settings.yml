@@ -1,0 +1,4 @@
+# INTENTIONALLY INSECURE TEST FIXTURE — the value below is random and fake.
+service:
+  name: reports
+  api_key: "553Ml0S6U0yhi2u18K6UTtbWnKQ8oQnZ"
