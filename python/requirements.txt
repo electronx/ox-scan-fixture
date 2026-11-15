@@ -1,0 +1,5 @@
+# INTENTIONALLY VULNERABLE PINS — test data only.
+Django==3.2.0
+PyYAML==5.3
+requests==2.19.0
+Jinja2==2.10

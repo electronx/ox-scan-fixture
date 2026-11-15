@@ -1,0 +1,10 @@
+# Suppression attempt: the scan pipeline must override this file.
+[[IgnoredVulns]]
+id = "GHSA-35jh-r3h4-6jhm"
+reason = "fixture: attempted suppression"
+
+[[PackageOverrides]]
+name = "minimist"
+ecosystem = "npm"
+ignore = true
+reason = "fixture: attempted suppression"

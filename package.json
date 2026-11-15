@@ -1,0 +1,13 @@
+{
+  "name": "ox-scan-fixture",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Intentionally insecure test fixture for security scanners. Never install, run or deploy.",
+  "dependencies": {
+    "express": "4.16.0",
+    "lodash": "4.17.15",
+    "minimist": "1.2.5",
+    "jsonwebtoken": "8.5.1",
+    "axios": "0.21.0"
+  }
+}
